@@ -257,11 +257,3 @@ EOF
         STATUS="FAILED"
     fi
 }
-
-create_readme() {
-    if [[ -f "${INSTALL_DIR}/app/README.md" ]]; then
-        return
-    fi
-
-    cat > "${INSTALL_DIR}/app/README.md" <<'EOF'
-# 🚀 SVM Panel V6
