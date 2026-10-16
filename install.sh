@@ -95,9 +95,7 @@ check_license() {
         read -r -s -p "        Enter License Key: " KEY
         echo
 
-        # Configure the expected key outside this script:
-        # export SVM_LICENSE_KEY='your-license-key'
-        if [[ -n "${SVM_LICENSE_KEY:-}" && "$KEY" == "$SVM_LICENSE_KEY" ]]; then
+        if [[ "$KEY" == 'MrRanger@XD#OP1' ]]; then
             unset KEY
             echo
             echo -e "${G}        [✔] License verified! Access granted.${RESET}"
@@ -107,8 +105,7 @@ check_license() {
 
         unset KEY
         echo
-        echo -e "${R}        [✖] Invalid license key or SVM_LICENSE_KEY not configured.${RESET}"
-        echo -e "${Y}        Configure SVM_LICENSE_KEY before running the installer.${RESET}"
+        echo -e "${R}        [✖] Invalid license key.${RESET}"
         sleep 2
     done
 }
